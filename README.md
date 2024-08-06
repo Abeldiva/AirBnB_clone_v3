@@ -1,5 +1,58 @@
 # AirBnB Clone - The Console
+# AirBnB Clone v3
 The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+
+## Author
+* **New Contributor:** [Faith Ezechukwu] (https://github.com/Abeldiva/AirBnB_clone_v.git)
+
+## New Contributions
+* This task demands we fork the author's project and add contributions.
+* Questions are below:
+* 0. For this project you will fork this codebase:
+* Update the repository name to AirBnB_clone_v3
+* Update the README.md:
+* Add yourself as an author of the project
+* Add new information about your new contribution
+* Make it better!
+* If you’re the owner of this codebase, create a new repository called AirBnB_clone_v3 and copy over all files from AirBnB_clone_v2
+* 1. At Holberton, we have a lot of tests, and they all pass! Just for the Intranet itself, there are:
+* 5,213 assertions (as of 08/20/2018)
+* 13,061 assertions (as of 01/25/2021)
+* The following requirements must be met for your project:
+* all current tests must pass (don’t delete them…)
+* add new tests as much as you can (tests are mandatory for some tasks)
+* 2. Update DBStorage and Filestorage, adding two methods. Prototype: def get(self, cls, id)
+* cls: class
+* id: string representing the object ID
+* Returns the object based on the class and its ID, or None if not found
+* A method to count the number of objects in storage:
+* Prototype: def count(self, cls=None):
+* cls: class (optional)
+* Returns the number of objects in storage matching the given class. If no class is passed, returns the count of all objects in storage.
+* File: models/engine/db_storage.py, models/engine/file_storage.py, tests/test_models/test_engine/test_db_storage.py, tests/test_models/test_engine/test_file_storage.py
+* 3. Create a folder api at the root of the project with an empty file __init__.py
+* Create a folder v1 inside api:
+* create an empty file __init__.py
+* create a file app.py:
+* create a variable app, instance of Flask
+* import storage from models
+* import app_views from api.v1.views
+* register the blueprint app_views to your Flask instance app
+* declare a method to handle @app.teardown_appcontext that calls storage.close()
+* inside if __name__ == "__main__":, run your Flask server (variable app) with:
+* host = environment variable HBNB_API_HOST or 0.0.0.0 if not defined
+* port = environment variable HBNB_API_PORT or 5000 if not defined
+* threaded=True
+* Create a folder views inside v1:
+* create a file __init__.py:
+* import Blueprint from flask doc
+* create a variable app_views which is an instance of Blueprint (url prefix must be /api/v1)
+* wildcard import of everything in the package api.v1.views.index => PEP8 will complain about it, don’t worry, it’s normal and this file (v1/views/__init__.py) won’t be check.
+* create a file index.py
+* import app_views from api.v1.views
+* create a route /status on the object app_views that returns a JSON: "status": "OK" (see example)
+* File: api/__init__.py, api/v1/__init__.py, api/v1/views/__init__.py, api/v1/views/index.py, api/v1/app.py
+* There are upto seven questions but I will stop here.q
 
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
